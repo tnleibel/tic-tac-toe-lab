@@ -18,7 +18,7 @@ let tie;
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll(".sqr");
 const messageEl = document.querySelector("#message");
-
+const resetButtonEl = document.querySelector("#reset")
 /*-------------------------------- Functions --------------------------------*/
 function init() {
   board = ["", "", "", "", "", "", "", "", ""];
@@ -62,8 +62,8 @@ function handleClick(event) {
   } else if (winner === true) {
     return;
   }
-  placePiece(squareIdx);
-  checkForWinner();
+  placePiece(squareIdx)
+  checkForWinner()
   checkForTie()
   switchPlayerTurn()
   render()
@@ -114,3 +114,4 @@ function switchPlayerTurn() {
 
 /*----------------------------- Event Listeners -----------------------------*/
 document.querySelector(".board").addEventListener("click", handleClick);
+resetButtonEl.addEventListener("click", init)
